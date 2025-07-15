@@ -7,27 +7,28 @@ class BasicPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<int>(counterProvider, (previous, next) {
-      if (next == 3) {
-        showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text('Alert'),
-                content: Text('counter: $next'),
-              );
-            });
-      }
-    });
-    final value = ref.watch(counterProvider);
+    // ref.listen<int>(counterProvider, (previous, next) {
+    //   if (next == 3) {
+    //     showDialog(
+    //         context: context,
+    //         builder: (context) {
+    //           return AlertDialog(
+    //             title: const Text('Alert'),
+    //             content: Text('counter: $next'),
+    //           );
+    //         });
+    //   }
+    // });
+    // final value = ref.watch(counterProvider);
+
+    final value = ref.watch(ageProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('StateProvider'),
       ),
       body: Center(
-        child:
-            Text('${value}', style: Theme.of(context).textTheme.headlineLarge),
+        child: Text('$value', style: Theme.of(context).textTheme.headlineLarge),
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
