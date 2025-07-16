@@ -4,5 +4,5 @@ final familyHelloProvider = Provider.family<String, String>((ref, name) {
   ref.onDispose(() {
     print("[familyHelloProvider($name) disposed]");
   });
-  return "Hello $name";
+  return "Hello $name. I write this for daily commit";
 });
