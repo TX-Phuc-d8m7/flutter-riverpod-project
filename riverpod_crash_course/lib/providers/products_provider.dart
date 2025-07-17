@@ -52,6 +52,12 @@ const List<Product> allProducts = [
     price: 79,
     image: 'assets/products/guitar.png',
   ),
+  Product(
+    id: '9',
+    title: 'Bicycle',
+    price: 79,
+    image: 'assets/products/guitar.png',
+  ),
 ];
 
 // final productsProvider = Provider((ref) => allProducts);
