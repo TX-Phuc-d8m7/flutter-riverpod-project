@@ -17,6 +17,12 @@ class TodosPage extends ConsumerWidget {
             },
             child: const Text('Back'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/todos/1');
+            },
+            child: const Text('Go to Todo 1'),
+          ),
         ],
       ),
     );
