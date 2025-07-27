@@ -14,4 +14,8 @@ class Todo with _$Todo {
     required String description,
     @Default(false) bool isCompleted,
   }) = _Todo;
+
+  factory Todo.add({required String title, required String description}) {
+    return Todo(id: uuid.v4(), title: title, description: description);
+  }
 }

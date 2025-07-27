@@ -1,38 +1,22 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Model for a Todo item
-class Todo {
-  final String id;
-  final String title;
-  final bool completed;
+import '../models/todo_model.dart';
 
-  Todo({required this.id, required this.title, this.completed = false});
+class TodoNotifier extends StateNotifier<List<Todo>> {
+  TodoNotifier() : super([]);
 
-  Todo copyWith({String? id, String? title, bool? completed}) {
-    return Todo(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      completed: completed ?? this.completed,
-    );
-  }
-}
-
-// StateNotifier to manage the list of todos
-class TodosNotifier extends StateNotifier<List<Todo>> {
-  TodosNotifier() : super([]);
-
-  void addTodo(String title) {
-    final todo = Todo(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
-      title: title,
-    );
+  void addTodo(String title, String description) {
+    final todo = Todo.add(title: title, description: description);
     state = [...state, todo];
   }
 
-  void toggleTodo(String id) {
+  void toggleTodoCompletion(String id) {
     state = [
       for (final todo in state)
-        if (todo.id == id) todo.copyWith(completed: !todo.completed) else todo,
+        if (todo.id == id)
+          todo.copyWith(isCompleted: !todo.isCompleted)
+        else
+          todo,
     ];
   }
 
@@ -41,7 +25,6 @@ class TodosNotifier extends StateNotifier<List<Todo>> {
   }
 }
 
-// Provider for the TodosNotifier
-final todosProvider = StateNotifierProvider<TodosNotifier, List<Todo>>(
-  (ref) => TodosNotifier(),
+final todosProvider = StateNotifierProvider<TodoNotifier, List<Todo>>(
+  (ref) => TodoNotifier(),
 );

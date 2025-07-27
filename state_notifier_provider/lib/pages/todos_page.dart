@@ -8,21 +8,7 @@ class TodosPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text('Todos')),
-      body: Column(
-        children: [
-          Column(
-            children: [
-              const Center(child: Text('Todos')),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Back'),
-              ),
-            ],
-          ),
-        ],
-      ),
+      body: const Center(child: Text('Todos')),
     );
   }
 }
