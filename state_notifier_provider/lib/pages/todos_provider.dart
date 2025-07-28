@@ -25,6 +25,7 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
   }
 }
 
-final todosProvider = StateNotifierProvider<TodoNotifier, List<Todo>>(
-  (ref) => TodoNotifier(),
-);
+final todosProvider =
+    StateNotifierProvider.autoDispose<TodoNotifier, List<Todo>>(
+      (ref) => TodoNotifier(),
+    );
