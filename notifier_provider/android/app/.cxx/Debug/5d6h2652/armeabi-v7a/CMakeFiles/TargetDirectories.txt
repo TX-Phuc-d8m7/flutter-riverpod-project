@@ -1,0 +1,2 @@
+/Users/truongxuanphuc/Documents/VNEXT Internship/Flutter Project/riverpod_projects/notifier_provider/android/app/.cxx/Debug/5d6h2652/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/truongxuanphuc/Documents/VNEXT Internship/Flutter Project/riverpod_projects/notifier_provider/android/app/.cxx/Debug/5d6h2652/armeabi-v7a/CMakeFiles/edit_cache.dir
