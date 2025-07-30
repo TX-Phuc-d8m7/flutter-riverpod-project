@@ -23,6 +23,6 @@ class TodosNotifier extends ChangeNotifier {
   }
 }
 
-final todosProvider = ChangeNotifierProvider<TodosNotifier>((ref) {
+final todosProvider = ChangeNotifierProvider.autoDispose<TodosNotifier>((ref) {
   return TodosNotifier();
 });
