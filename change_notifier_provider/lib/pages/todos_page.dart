@@ -36,12 +36,6 @@ class TodosPage extends ConsumerWidget {
                       icon: const Icon(Icons.delete),
                     ),
                   ),
-                ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Exit",
-                      style: TextStyle(color: Colors.amber),
-                    ))
               ],
             ),
           ),
