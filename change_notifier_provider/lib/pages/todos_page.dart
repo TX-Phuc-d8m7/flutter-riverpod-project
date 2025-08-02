@@ -65,17 +65,27 @@ class _AddTodoState extends ConsumerState<AddTodo> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: TextField(
-        controller: textController,
-        decoration: const InputDecoration(
-          labelText: 'New Todo',
-        ),
-        onSubmitted: (desc) {
-          if (desc.isNotEmpty) {
-            ref.read(todosProvider.notifier).add(desc);
-            textController.clear();
-          }
-        },
+      child: Column(
+        children: [
+          TextField(
+            controller: textController,
+            decoration: const InputDecoration(
+              labelText: 'New Todo',
+            ),
+            onSubmitted: (desc) {
+              if (desc.isNotEmpty) {
+                ref.read(todosProvider.notifier).add(desc);
+                textController.clear();
+              }
+            },
+          ),
+          ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                "Submit",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+              ))
+        ],
       ),
     );
   }
