@@ -79,12 +79,6 @@ class _AddTodoState extends ConsumerState<AddTodo> {
               }
             },
           ),
-          ElevatedButton(
-              onPressed: () {},
-              child: const Text(
-                "Submit",
-                style: TextStyle(color: Colors.white, fontSize: 30),
-              ))
         ],
       ),
     );
