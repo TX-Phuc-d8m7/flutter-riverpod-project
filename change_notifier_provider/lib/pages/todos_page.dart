@@ -79,7 +79,6 @@ class _AddTodoState extends ConsumerState<AddTodo> {
               }
             },
           ),
-          ElevatedButton(onPressed: () {}, child: const Text("Click me"))
         ],
       ),
     );
